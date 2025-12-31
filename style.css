@@ -1,0 +1,154 @@
+:root {
+    --color-blue: #0088FF;
+    --color-green: #34C759;
+    --color-orange: #FF8D28;
+    --color-yellow: #FFCC00;
+    --color-red: #FF383C;
+    --color-gray: #8E8E93;
+    --color-gray3: #C7C7CC;
+    --color-gray6: #F2F2F7;
+    --color-white: #FFFFFF;
+    --color-black: #1C1C1E;
+    --shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    --shadow-hover: 0 6px 20px rgba(0, 0, 0, 0.15);
+}
+
+header {
+    width: 100%;
+    
+    background-color: var(--color-white);
+    padding: 0 50px;
+    box-sizing: border-box;
+    height: 70px;
+    
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.headline {
+    font-size: 20px;
+    font-weight: bold;
+    margin: 0;
+}
+
+.headline a {
+    text-decoration: none;
+    color: var(--color-black);
+}
+
+.nav-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    gap: 30px;
+}
+
+.nav-list-item a {
+    text-decoration: none;
+    color: var(--color-gray);
+    font-weight: bold;
+    font-size: 16px;
+    transition: color 0.3s;
+}
+
+.nav-list-item a:hover {
+    color: var(--color-black);
+}
+
+body {
+    font-family: "Helvetica Neue", Arial, sans-serif;
+    margin: 0px;
+    padding: 0px;
+}
+
+.top {
+    padding: 30px;
+    background-color: #E7F9F2;
+}
+
+.middle-high {
+    padding: 30px;
+    background-color: #E3F8FF;
+}
+
+.middle-low {
+    padding: 30px;
+    background-color: #FFFAF3;
+}
+
+.buttom {
+    padding: 30px;
+    background-color: #F8FBFF;
+}
+
+.container {
+    max-width: 800px;
+    margin: 40px auto;
+    text-align: center;
+    padding: 30px;
+    border-radius: 25px;
+    box-sizing: border-box;
+}
+
+h1 {
+    color: var(--color-black);
+    margin-bottom: 30px;
+    font-size: 38px;
+}
+
+p {
+    color: #6A7280;
+    font-size: 20px;
+}
+
+button {
+    background-color: var(--color-white);
+    color: var(--color-black);
+    border: 1px solid var(--color-gray3);
+    margin: 20px 0px 0px 0px;
+    padding: 15px 100px;
+    font-size: 20px;
+    font-weight: bold;
+    align-items: center;
+    border-radius: 15px;
+    cursor: pointer;
+    transition: background-color 0.2s, border 0.2s;
+    white-space: nowrap; 
+}
+
+button:hover {
+    background-color: var(--color-gray6);
+    border: 1px solid var(--color-gray);
+}
+
+@media (max-width: 600px) {
+    header {
+        flex-direction: column;
+        height: auto;
+        padding: 10px 5px;
+    }
+
+    .nav-list {
+        margin-top: 10px;
+        font-size: 14px;
+        gap: 15px;
+    }
+
+    body {
+        margin: 0px;
+        padding: 0px;
+    }
+
+    .container {
+        padding: 20px 15px;
+        margin: 40px 10px;
+    }
+
+    button {
+        width: 100%;
+        padding: 15px 0;
+        box-sizing: border-box;
+    }
+}
