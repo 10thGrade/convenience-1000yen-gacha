@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="ローソンのメニューでガチャしよう！">
+    <meta name="author" content="fantasma">
+    <title>ローソン1000円ガチャ | コンビニ1000円ガチャ</title>
+    <link rel="stylesheet" href="style.css" type="text/css">
+    
+    <meta property="og:title" content="ローソン1000円ガチャ">
+    <meta property="og:description" content="ローソンのメニューでガチャしよう！">
+    <meta property="og:site_name" content="ローソン1000円ガチャ | コンビニ1000円ガチャ">
+    <meta property="og:url" content="https://10thgrade.github.io/convenience-1000yen-gacha/">
+    <meta name="twitter:card" content="summary">
+    <meta name="theme-color" content="#FFFFFF">
+</head>
+
+<body>
+    <header>
+        <div class="headline">
+            <a href=".">LAWSON 1000-yen Gacha</a>
+        </div>
+        <nav>
+            <ul class="nav-list">
+                <li class="nav-list-item"><a href="../index.html">1000-yen Gacha</a></li>
+                <li class="nav-list-item"><a href="#">GitHub</a></li>
+            </ul>
+        </nav>
+    </header>
+    <div class="container">
+        <h1>ローソン1000円ガチャ</h1>
+        
+        <div class="input-area">
+            <div>
+                <label>予算: </label>
+                <input type="number" min="0" id="budgetNum" value="1000" step="100"> 円
+            </div>
+            <button id="execBtn">ガチャを回す</button>
+        </div>
+
+        <div id="resultArea" class="hidden">
+            <h2 id="totalNum">合計: 0 円</h2>
+            <div id="cardList" class="card-list"></div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
