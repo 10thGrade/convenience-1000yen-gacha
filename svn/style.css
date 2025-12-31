@@ -1,0 +1,246 @@
+:root {
+    --color-blue: #0088FF;
+    --color-green: #34C759;
+    --color-orange: #FF8D28;
+    --color-yellow: #FFCC00;
+    --color-red: #FF383C;
+    --color-gray: #8E8E93;
+    --color-gray6: #F2F2F7;
+    --color-white: #FFFFFF;
+    --color-black: #1C1C1E;
+    --seven-green: #008738;
+    --seven-red: #FD0003;
+    --seven-orange: #FF6600;
+    --shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    --shadow-hover: 0 6px 20px rgba(0, 0, 0, 0.15);
+}
+
+header {
+    width: 100%;
+    
+    background-color: var(--color-white);
+    padding: 0 50px;
+    box-sizing: border-box;
+    height: 70px;
+    
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.headline {
+    font-size: 20px;
+    font-weight: bold;
+    margin: 0;
+}
+
+.headline a {
+    text-decoration: none;
+}
+
+.headline a span:nth-child(1) {
+    color: var(--seven-red);
+}
+
+.headline a span:nth-child(2) {
+    color: var(--seven-orange);
+}
+
+.headline a span:nth-child(3) {
+    color: var(--seven-green);
+}
+
+.nav-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    gap: 30px;
+}
+
+.nav-list-item a {
+    text-decoration: none;
+    color: var(--color-gray);
+    font-weight: bold;
+    font-size: 16px;
+    transition: color 0.3s;
+}
+
+.nav-list-item a:hover {
+    color: var(--color-black);
+}
+
+body {
+    font-family: "Helvetica Neue", Arial, sans-serif;
+    background-color: var(--seven-green);
+    margin: 0px;
+    padding: 0px;
+}
+
+.container {
+    max-width: 800px;
+    margin: 40px auto;
+    text-align: center;
+    background-color: #FFFAF3;
+    padding: 30px;
+    border-radius: 25px;
+    box-sizing: border-box;
+}
+
+h1 {
+    color: var(--color-black);
+    margin-bottom: 30px;
+}
+
+.input-area {
+    margin-bottom: 30px;
+    padding: 20px;
+    background-color: #EBF3F9;
+    border-radius: 20px;
+    display: block;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+input {
+    padding: 10px;
+    font-size: 18px;
+    width: 100px;
+    text-align: right;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+button {
+    background-color: #2FC993;
+    color: white;
+    border: none;
+    margin: 20px 0px 0px 0px;
+    padding: 10px 25px;
+    font-size: 18px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-left: 10px;
+    transition: background-color 0.2s;
+    white-space: nowrap; 
+}
+
+button:hover {
+    background-color: #86D5AF;
+}
+
+button:disabled {
+    background-color: var(--color-gray);
+    cursor: not-allowed;
+}
+
+.hidden {
+    display: none;
+}
+
+#resultArea {
+    margin-bottom: 30px;
+    padding: 20px;
+    background-color: #CDF3E4;
+    border-radius: 20px;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.card-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.card {
+    border-radius: 10px;
+    overflow: hidden;
+    background: var(--color-white);
+    transition: transform 0.2s;
+    display: block;
+    text-decoration: none;
+    color: inherit;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+}
+
+.card img {
+    width: 100%;
+    height: 140px;
+    object-fit: cover;
+}
+
+.card-info {
+    padding: 15px;
+    text-align: left;
+}
+
+.card h3 {
+    font-size: 14px;
+    margin: 0 0 10px 0;
+    height: 40px;
+    overflow: hidden;
+    line-height: 1.4;
+}
+
+.price {
+    font-weight: bold;
+    color: #d00;
+    font-size: 16px;
+    margin: 0;
+}
+
+.category {
+    font-size: 12px;
+    color: #888;
+    margin-top: 5px;
+}
+
+@media (max-width: 600px) {
+    header {
+        flex-direction: column;
+        height: auto;
+        padding: 10px 5px;
+    }
+
+    .nav-list {
+        margin-top: 10px;
+        font-size: 14px;
+        gap: 15px;
+    }
+
+    body {
+        margin: 0px;
+        padding: 0px;
+    }
+
+    .container {
+        padding: 20px 15px;
+        margin: 40px 10px;
+    }
+
+    .input-area {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    input {
+        width: 60%;
+        box-sizing: border-box;
+        margin-bottom: 10px;
+        text-align: center;
+    }
+
+    button {
+        width: 100%;
+        margin-left: 0;
+    }
+}
