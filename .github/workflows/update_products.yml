@@ -1,0 +1,53 @@
+name: Update Product Data
+
+on:
+  schedule:
+    - cron: '0 0 * * 2'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  update-products:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.9'
+
+      - name: Get current date
+        env:
+          TZ: 'Asia/Tokyo'
+        run: |
+          echo "TIMESTAMP=$(date +'%Y-%m-%d')" >> $GITHUB_ENV
+
+      - name: Install dependencies
+        run: |
+          if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
+
+      - name: Run scraping script
+        run: python scripts/update_products.py
+
+      - name: Check for changes
+        id: git-check
+        run: |
+          git diff --exit-code || echo "changes_exist=true" >> $GITHUB_OUTPUT
+
+      - name: Create Pull Request
+        if: steps.git-check.outputs.changes_exist == 'true'
+        uses: peter-evans/create-pull-request@v5
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          commit-message: "chore: update product data JSON files"
+          committer: GitHub <noreply@github.com>
+          author: GitHub Actions <actions@github.com>
+          branch: chore/products-data-${{ env.TIMESTAMP }}
+          delete-branch: true
+          title: "chore: update products data at ${{ env.TIMESTAMP }}"
+          body-path: pr_body.txt
