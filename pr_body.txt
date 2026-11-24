@@ -2,9 +2,9 @@ This PR contains the following updates:
 
 | Store | Changes | Status |
 |:---|:---:|:---|
-| **Seven-Eleven** | `2070` | ✅ Success |
-| **FamilyMart** | `1532` | ✅ Success |
-| **Lawson** | `1144` | ✅ Success |
+| **Seven-Eleven** | `0` | ✅ Success |
+| **FamilyMart** | `1538` | ✅ Success |
+| **Lawson** | `1200` | ✅ Success |
 
 ---
 
